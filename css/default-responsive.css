@@ -1,0 +1,31 @@
+/* TABLET */
+@media only screen and (max-width: 979px) {
+    #container, #featured-action {
+        min-width: 700px;
+        width: 100%;
+    }
+    #container {
+        min-height: 790px;
+    }
+
+    #featured-catalog {
+        width: 50%;
+        padding-top: 0;
+    }
+    #recent-activity {
+        width: 50%;
+        height: 287px;
+        border: none;
+    }
+    .actions {
+        width: 480px;
+        margin: 0 auto;
+    }
+    #featured-catalog .pt-catalog {
+        height: auto;
+    }
+
+    .action-box {
+        margin: 10px 6px;
+    }
+}

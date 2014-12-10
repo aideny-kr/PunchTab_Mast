@@ -1,0 +1,76 @@
+{% load i18n %}
+{% load pt_tags %}
+
+<div class="pt-action-{{ action.id }} action-box {{ action.classname }}">
+    <div class="icon {{ action.classname }}"></div>
+    <div class="cover">{% blocktrans %}When is your birthday ?{% endblocktrans %}</div>
+    <div class="text" style="display: none;">
+        <div class="pt-toggle-on">
+            <form name="birthday">
+                <input type="text" name="birthday">
+                <button type="submit" class="beta">{% blocktrans %}Send{% endblocktrans %}</button>
+            </form>
+        </div>
+        <div class="pt-toggle-wait ajax-loader"></div>
+        <div class="pt-toggle-off">{% blocktrans %}Thanks for submitting your birthday{% endblocktrans %}</div>
+    </div>
+    <div class="points">{% blocktrans with points=action.parameters.points|default:"100" %}+ {{ points }} points{% endblocktrans %}</div>
+</div>
+
+<script type="text/javascript">
+function valideDate(d, m, y) {
+    if (m < 1 || m > 12 || y < 1800 || y > 3000) return false;
+    if (m == 2) {
+        var days = ((y % 4) == 0) ? 29 : 28;
+    } else if (m == 4 || m == 6 || m == 9 || m == 11) {
+        var days = 30;
+    } else {
+        var days = 31;
+    }
+    return (d >= 1 && d <= days);
+}
+
+window.ptReady.push(function () {
+
+    cover("{{ action.id }}");
+
+    var input = $("input[name=birthday]", ".pt-action-{{ action.id }}"),
+        placeholder = PT.i18n.get_format('SHORT_DATE_FORMAT').replace('d', 'dd').replace('m', 'mm').replace('Y', 'YYYY'),
+        format = placeholder.replace(/[a-zA-Z]/g, '9');
+
+    input.attr('placeholder', placeholder);
+
+    input.mask(format, {placeholder: "  "});
+
+    PT.action.activity.register("{{ action.id }}", ["{{ action.name }}", {{ action.parameters|jsonify }}], "pt-action-{{ action.id }}");
+
+    // Validate the birthday format:
+    var pattern = placeholder.replace(/dd|mm/g, "(\\d{2})").replace("YYYY", "(\\d{4})"),
+        re = new RegExp(pattern),
+        indexOf = {
+            day: placeholder.indexOf('d'),
+            month: placeholder.indexOf('m'),
+            year: placeholder.indexOf('Y')
+        },
+        order = [indexOf.day, indexOf.month, indexOf.year].sort();
+        match = {
+            day: (PT.util.indexOf(order, indexOf.day) + 1),
+            month: (PT.util.indexOf(order, indexOf.month) + 1),
+            year: (PT.util.indexOf(order, indexOf.year) + 1)
+        };
+
+    PT.dom.onsubmit(document.forms.birthday, function (data) {
+        var m = data.birthday.match(re);
+        day = m[match.day];
+        month = m[match.month];
+        year = m[match.year];
+
+        if (valideDate(day, month, year)) {
+            PT.action.activity.call("{{ action.id }}", {value: data.birthday});
+        } else {
+            this.className += " error";
+        }
+    });
+
+});
+</script>

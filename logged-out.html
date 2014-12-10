@@ -1,0 +1,173 @@
+{% load i18n %}
+
+<div class="logged-out">
+    <div class="logged-out-header">
+        <h1>{% blocktrans %}Earn points and get prizes - it's that easy!{% endblocktrans %}</h1>
+    </div>
+
+    {% if not auth.features.branding_removept %}
+    <a href="/?src=mast&src_key={{ publisher.key }}" target="_blank"><div id="powered-by-punchtab"></div></a>
+    {% endif %}
+
+    <div class="logged-out-introduction clearfix">
+        <div class="ribbon"></div>
+        <div class="logged-out-circles clearfix">
+            <div class="logged-out-circle float">
+                <div class="logged-out-circle-step">1</div>
+                <div class="logged-out-circle-text"><span class="logged-out-circle-image-visit"></span>{% blocktrans %}Stop by, earn points{% endblocktrans %}</div>
+            </div>
+            <div class="logged-out-circle float">
+                <div class="logged-out-circle-step">2</div>
+                {% if not auth.features.branding_removept %}
+                    <div class="logged-out-red-ribbon"></div>
+                {% endif %}
+                <div class="logged-out-circle-text">
+                    <br>
+                    {% blocktrans %}Earn more by sharing{% endblocktrans %}
+                    <span class="logged-out-circle-image-share"></span>
+                    {% if not auth.features.branding_removept %}
+                        <em>{% blocktrans %}Look out for the red ribbon{% endblocktrans %}</em>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="logged-out-circle float">
+                <div class="logged-out-circle-step">3</div>
+                <div class="logged-out-circle-text"><span class="logged-out-circle-image-reward"></span>{% blocktrans %}Virtual points<br>=<br>Real prizes{% endblocktrans %}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="logged-out-footer clearfix">
+        <div class="logged-out-rewards float">
+            <h2>{% blocktrans %}Get awesome stuff{% endblocktrans %}</h2>
+            <div class="pt-catalog" data-by-slide="3" data-keys="false">
+                <script type="text/html" class="pt-reward-preview">
+                    <div class="logged-out-reward">
+                        <div class="logged-out-reward-image">
+                            <div class="reward-image pt-reward-image-default pt-reward-image-[[id]]"></div>
+                        </div>
+                        <div class="logged-out-reward-name">
+                            <p>[[name]]</p>
+                        </div>
+                    </div>
+                </script>
+            </div>
+        </div>
+        <div class="logged-out-connection float"></div>
+    </div>
+</div>
+
+<div id="connection">
+    {% if publisher.auth_type == 1 %}
+    <!-- sso -->
+        <div class="logged-out-auth-sso">
+            <h2>{{ publisher_login_text }}</h2>
+            <a href="{{ publisher_login_link }}" target="_top" class="sso large" id="sso">{% blocktrans %}Log In{% endblocktrans %}</a>
+        </div> 
+    <!-- sso -->
+    {% else %}
+        <div class="clearfix logged-out-auth{% if publisher.is_email_signup_enabled %} both{% endif %}">
+            {% if publisher.is_email_signup_enabled %}
+            <div class="logged-out-auth-email">
+                <form name="email-login" class="email-login" style="display: block;">
+                    <div class="clearfix logged-out-auth-title">
+                        <div class="float">
+                            <h2>{% blocktrans %}Sign in!{% endblocktrans %}</h2>
+                        </div>
+                        <div class="float-right">
+                            <a href="#" class="goto-email-signup">{% blocktrans %}Sign up with email{% endblocktrans %}</a>
+                        </div>
+                    </div>
+                    <ul>
+                        <li><input type="text" name="email" placeholder="{% blocktrans %}Email Address{% endblocktrans %}"></li>
+                        <li><input type="password" name="password" placeholder="{% blocktrans %}Password{% endblocktrans %}"></li>
+                        <li><button type="submit">{% blocktrans %}Log in{% endblocktrans %}</button></li>
+                        <li class="error notification"></li>
+                    </ul>
+                    <a href="#" class="goto-email-forgot">{% blocktrans %}forgot password?{% endblocktrans %}</a>
+                </form>
+
+                <form name="email-signup" class="email-signup">
+                    <div class="clearfix logged-out-auth-title">
+                        <div class="float">
+                            <h2>{% blocktrans %}Sign up for an account{% endblocktrans %}</h2>
+                        </div>
+                        <div class="float-right">
+                            <a href="#" class="goto-email-login">{% blocktrans %}Back to login{% endblocktrans %}</a>
+                        </div>
+                    </div>
+                    <ul>
+                        <li><input type="text" name="email" placeholder="{% blocktrans %}Enter your email address{% endblocktrans %}"></li>
+                        <li><input type="password" name="password" placeholder="{% blocktrans %}Password{% endblocktrans %}"></li>
+                        <li><input type="password" name="confirm_password" placeholder="{% blocktrans %}Confirm your password{% endblocktrans %}"></li>
+                        <li><button type="submit">{% blocktrans %}Sign up{% endblocktrans %}</button></li>
+                        <li class="error notification"></li>
+                    </ul>
+                </form>
+
+                <form name="email-forgot" class="email-forgot">
+                    <div class="clearfix logged-out-auth-title">
+                        <div class="float">
+                            <h2>{% blocktrans %}Forgot your password huh?{% endblocktrans %}</h2>
+                        </div>
+                        <div class="float-right">
+                            <a href="#" class="goto-email-login">{% blocktrans %}Back to login{% endblocktrans %}</a>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>{% blocktrans %}Give us your email address and we'll reset your password?{% endblocktrans %}</li>
+                        <li><input type="text" name="email" placeholder="{% blocktrans %}Enter your email address{% endblocktrans %}"></li>
+                        <li><button type="submit">{% blocktrans %}Reset your password{% endblocktrans %}</button></li>
+                    </ul>
+                </form>
+
+                <form name="email-forgot-success" class="email-forgot-success">
+                   <div class="clearfix logged-out-auth-title">
+                        <div class="float">
+                            <h2>{% blocktrans %}Forgot your password huh?{% endblocktrans %}</h2>
+                        </div>
+                        <div class="float-right">
+                            <a href="#" class="goto-email-login">{% blocktrans %}Back to login{% endblocktrans %}</a>
+                        </div>
+                    </div> 
+                    <ul>
+                        <li>{% blocktrans with email="<span class='email-forgot-email'></span>" %}Thanks. We've sent an email with temporary password to {{ email }}.{% endblocktrans %}</li>
+                        <li>{% blocktrans with here_link="<a href='#' class='goto-email-login'>here</a>" %}Click  to login using your temporary password.{% endblocktrans %}</li>
+                    </ul>
+                </form>
+
+                <form name="email-change" class="email-change">
+                    <div class="clearfix auth-email-title">
+                        <div class="float">
+                            <h2>{% blocktrans %}Change your password{% endblocktrans %}</h2>
+                        </div>
+                        <div class="float-right">
+                            <a href="#" class="goto-email-login">{% blocktrans %}Back to login{% endblocktrans %}</a>
+                        </div>
+                    </div>
+                    <ul>
+                        <li><input type="password" name="new_password" placeholder="{% blocktrans %}New Password{% endblocktrans %}"></li>
+                        <li><input type="password" name="confirm_password" placeholder="{% blocktrans %}Confirm your password{% endblocktrans %}"></li>
+                        <li><button type="submit">{% blocktrans %}Change{% endblocktrans %}</button></li>
+                    </ul>
+                </form>
+            </div>
+            {% else %}
+                <h2>{% blocktrans %}Get Started! Log in Now{% endblocktrans %}</h2>
+            {% endif %}
+
+            <div class="logged-out-auth-facebook">
+                <button class="facebook large" id="connect">{% blocktrans %}Log in with Facebook{% endblocktrans %}</button>
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="rules">
+        <p>
+            <a href="/rules/program?key={{ publisher.key }}" target="_blank">{% blocktrans %}Program Rules{% endblocktrans %}</a>
+        </p>
+        <p>
+            <a href="/privacy?key={{ publisher.key }}" target="_blank">{% blocktrans %}Privacy{% endblocktrans %}</a>
+        </p>
+    </div>
+</div>

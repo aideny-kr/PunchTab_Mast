@@ -1,0 +1,253 @@
+#container {
+    margin: 0 auto;
+    width: 980px;
+    height: 580px;
+    position: relative;
+}
+
+#logged-out, #logged-in {
+    display: none;
+}
+
+
+.float {
+    float: left;
+}
+.float-right {
+    float: right;
+}
+
+body {
+    margin: 0;
+}
+em {
+    font-style: italic;
+}
+
+
+/* Overall */
+.view {
+    display: none;
+}
+.view.hide {
+    display: none;
+}
+.view.show {
+    display: block;
+}
+.message {
+    display: none;
+}
+
+/* Nav */
+#nav {
+    padding: 15px;
+}
+#nav ul li {
+    display: inline;
+    float: left;
+}
+
+/* Header */
+#header {
+    padding: 15px;
+    overflow: hidden;
+    position: relative;
+}
+#header img {
+    margin-right: 8px;
+    float: left;
+}
+#header ul.meta li {
+    display: inline;
+    float: left;
+    margin: 0 0 0 10px;
+}
+
+#user-summary {
+    margin: 20px 5px 0px 5px;
+}
+#header.show-summary {
+    height: 405px;
+}
+
+#header:hover .arrow {
+    display: block;
+}
+#header.show-summary .arrow {
+    display: block;
+}
+.arrow {
+    display: none;
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    height: 60px;
+    width: 60px;
+    margin-left: -39px;
+    border-radius: 40px;
+    background-color: #282828;
+    text-align: center;
+    padding-top: 2px;
+}
+
+.activities h2, .redemptions h2 {
+    margin-bottom: 10px;
+}
+.pt-user-activity ul {
+    height: 290px;
+    overflow: hidden;
+}
+.pt-user-activity li {
+    clear: both;
+    overflow: hidden;
+    margin: 3px 0;
+}
+.pt-user-activity .pt-user-activity-separator {
+    text-align: center;
+    color: #c0c0c0;
+}
+.pt-user-activity .pt-user-activity-name {
+    float: left;
+    text-transform: capitalize;
+}
+.pt-user-activity .pt-user-activity-points {
+    float: right;
+}
+
+
+.pt-user-redemption {
+    width: 400px;
+    overflow: hidden;
+}
+.pt-user-redemption .slide {
+    float: left;
+    width: 390px;
+}
+.pt-user-redemption-reward {
+    float: left;
+    margin: 0px 15px 10px 15px;
+    width: 100px;
+}
+.pt-user-redemption-reward-image-container, .pt-user-redemption-reward-image {
+    width: 100px;
+    height: 100px;
+}
+.pt-user-redemption-reward-title {
+    text-align: center;
+}
+.pt-user-redemption-reward-points {
+    text-align: center;
+    font-weight: normal;
+}
+.pt-user-redemption-loading, .pt-user-activity-loading {
+    background: url(../../nd/images/ajax-loader.gif) no-repeat;
+    width:32px;
+    height:32px;
+    margin: auto;
+}
+
+/* Overview */
+#overview {
+    overflow: hidden;
+    position: relative;
+}
+#recent-activity, #featured-catalog {
+    width: 500px;
+}
+.actions {
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+/* Recent Activity */
+#recent-activity {
+    overflow: hidden;
+}
+.pt-loyalty-stream {
+    overflow: hidden;
+    height: 390px;
+}
+.pt-activity-wrapper {
+    height: 30px;
+    padding: 10px;
+    clear: both;
+    overflow: hidden;
+}
+.pt-stream-avatar {
+    width: 30px;
+    height: 30px;
+    float: left;
+}
+.pt-activity-text {
+    float: left;
+    margin-left: 10px;
+    height: 30px;
+}
+
+/* Featured Catalog */
+#featured-catalog {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+#featured-catalog .slide {
+    width: 500px;
+}
+
+/* Activity */
+/* Box */
+.action-box {
+    position: relative;
+    float: left;
+    width: 200px;
+    margin: 10px 5px 10px 17px;
+    padding: 5px 10px;
+}
+
+/* Leaderboard */
+.pt-leaderboard .user-container {
+    overflow: hidden;
+    padding: 10px;
+}
+.pt-leaderboard .rank,
+.pt-leaderboard img,
+.pt-leaderboard .name,
+.pt-leaderboard .recent-activity,
+.pt-leaderboard .score {
+    line-height: 40px;
+}
+
+.pt-leaderboard .rank,
+.pt-leaderboard img,
+.pt-leaderboard .name,
+.pt-leaderboard .recent-activity {
+    float: left;
+}
+.pt-leaderboard .score {
+    float: right;
+    width: 12%;
+    margin-right: 10px;
+}
+
+.pt-leaderboard img {
+    width: 40px;
+    height: 40px;
+    margin: 0 20px;
+}
+.pt-leaderboard .name {
+    width: 20%;
+}
+
+/* Catalog */
+#catalog .pt-catalog {
+    overflow: hidden;
+}
+#catalog .slide {
+    width: 980px;
+}
+
+/* Logged-out */
+#connection {
+    position: absolute;
+}

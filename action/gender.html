@@ -1,0 +1,36 @@
+{% load i18n %}
+{% load pt_tags %}
+
+<div class="pt-action-{{ action.id }} action-box {{ action.classname }}">
+    <div class="icon {{ action.classname }}"></div>
+    <div class="cover">{% blocktrans %}What's your gender?{% endblocktrans %}</div>
+    <div class="text" style="display: none;">
+        <div class="pt-toggle-on">
+            <form name="gender">
+                <select name="gender">
+                    <option value="female">{% blocktrans %}female{% endblocktrans %}</option>
+                    <option value="male">{% blocktrans %}male{% endblocktrans %}</option>
+                </select>
+                <button type="submit" class="beta">{% blocktrans %}Send{% endblocktrans %}</button>
+            </form>
+        </div>
+        <div class="pt-toggle-wait ajax-loader"></div>
+        <div class="pt-toggle-off">{% blocktrans %}Thanks for submitting your gender{% endblocktrans %}</div>
+    </div>
+    <div class="points">{% blocktrans with points=action.parameters.points|default:"100" %}+ {{ points }} points{% endblocktrans %}</div>
+</div>
+
+<script type="text/javascript">
+window.ptReady.push(function () {
+    cover("{{ action.id }}");
+
+    PT.action.activity.register("{{ action.id }}", ["{{ action.name }}", {{ action.parameters|jsonify }}], "pt-action-{{ action.id }}");
+
+    PT.dom.onsubmit(document.forms.gender, function (data) {
+        PT.action.activity.call("{{ action.id }}", {value: data.gender});
+    });
+
+});
+</script>
+
+

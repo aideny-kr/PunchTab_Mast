@@ -1,0 +1,28 @@
+{% load i18n %}
+{% load pt_tags %}
+
+<div class="pt-action-{{ action.id }} {{ action.classname }} action-box">
+    <div class="icon {{ action.classname }}"></div>
+    <div class="text">
+        <div class="pt-toggle-on">
+            <button class="pt-connect beta" data-platform="foursquare">{% blocktrans %}Connect with Foursquare{% endblocktrans %}</button>
+        </div>
+        <div class="pt-toggle-wait ajax-loader"></div>
+        <div class="pt-toggle-off">
+            {% if action.context.success %}
+                {{ action.context.success }}
+            {% else %}
+                {% blocktrans %}Earn points for your Foursquare checkins{% endblocktrans %}
+            {% endif %}
+        </div>
+    </div>
+    <div class="points">{% blocktrans with points=action.parameters.points|default:"100" %}+ {{ points }} points{% endblocktrans %}</div>
+</div>
+
+<script type="text/javascript">
+window.ptReady.push(function () {
+    PT.action.connection.register("{{ action.name }}", "{{ action.name }}", "pt-action-{{ action.id }}");
+});
+</script>
+
+

@@ -1,0 +1,38 @@
+{% load i18n %}
+{% load pt_tags %}
+
+<div class="pt-action-{{ action.id }} action-box {{ action.classname }}">
+    <div class="icon {{ action.classname }}"></div>
+    <div class="cover">
+        {% autoescape off %}{{ action.context.template.text }}{% endautoescape %}
+    </div>
+    <div class="text" style="display: none;">
+        <input type="text" class="pt-referral" data-to="value" value="" readonly="true" data-url="{{ action.context.tweet.url }}">
+        <a href="#" class="pt-share"
+            data-referral="true"
+            data-link="{{ action.context.share.href }}"
+            data-name="{{ action.context.share.name }}"
+            data-caption="{{ action.context.share.caption }}"
+            data-picture="{{ action.context.share.picture }}"
+            data-description="{{ action.context.share.description }}"><i></i><span>{% blocktrans %}Share{% endblocktrans %}</span></a>
+        <a href="#" class="pt-tweet"
+            data-referral="true"
+            data-url="{{ action.context.tweet.url }}"
+            {% if not auth.features.branding_removept %}
+                data-via="punchtab"
+            {% endif %}
+            data-text="{{ action.context.tweet.text }}"><i></i><span>{% blocktrans %}Tweet{% endblocktrans %}</span></a>
+    </div>
+</div>
+
+<script>
+window.ptReady.push(function () {
+    PT.action.activity.register("{{ action.id }}");
+
+    cover("{{ action.id }}", function (id) {
+        $(".pt-action-" + id + " .pt-referral").click(function () {
+            $(this).select();
+        });
+    });
+});
+</script>

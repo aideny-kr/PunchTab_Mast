@@ -1,0 +1,82 @@
+{% load i18n %}
+{% load pt_tags %}
+
+<div class="pt-action-{{ action.id }} action-box {{ action.classname }}">
+    <div class="icon {{ action.classname }}"></div>
+    <div class="text">
+        <div class="pt-toggle-on">
+            <div id="pt-action-like-{{ action.id }}">
+                {% if action.context.likebox %}
+                <div data-href="{{ action.parameters.url }}"
+                    data-width="100" data-height="175"
+                    data-show-faces="false"
+                    data-stream="false"
+                    data-header="true"
+                    class="fb-like-box"></div>
+                {% else %}
+                <div data-send="false"
+                    data-layout="button_count"
+                    data-width="450"
+                    data-show-faces="false"
+                    data-href="{{ action.parameters.url }}"
+                    class="fb-like"></div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="pt-toggle-wait ajax-loader"></div>
+        <div class="pt-toggle-off">{% blocktrans %}Thanks for your like{% endblocktrans %}
+        </div>
+    </div>
+    <div class="points">{% blocktrans with points=action.parameters.points|default:"100" %}+ {{ points }} points{% endblocktrans %}</div>
+</div>
+
+<script type="text/javascript">
+window.ptReady.push(function () {
+    PT.action.activity.register("{{ action.id }}", ["{{ action.name }}", {{ action.parameters|jsonify }}], "pt-action-{{ action.id }}");
+
+    var facebookUrl = "{{ action.parameters.url }}";
+
+    // compatibility with old configuration
+    if (PT.util.isInt(facebookUrl)) {
+        PT.event.bind('facebook.ready', function () {
+            FB.api('/' + facebookUrl , function (response) {
+                if (response && !response.error) {
+                    var link = response.link,
+                        likeButton = PT.dom.$("pt-action-like-{{ action.id }}");
+
+                    PT.dom.removeChildren(likeButton);
+                    likeButton.appendChild(PT.platform.facebook.createLikeButton({
+                        'href': link,
+                        'layout': 'button_count',
+                        'width': '450'
+                    }));
+
+                    FB.XFBML.parse(likeButton);
+
+                    PT.event.bind('facebook.like', function (message) {
+                        if (message.url === link) {
+                            PT.action.activity.call("{{ action.id }}");
+                        }
+                    });
+                }
+            });
+        });
+    } else {
+        PT.event.bind('facebook.like', function (message) {
+            if (message.url === "{{ action.parameters.url }}") {
+                PT.action.activity.call("{{ action.id }}");
+            }
+        });
+    }
+
+    PT.event.bind("mast.show", function (message) {
+        if (message.view === "overview" || message.view === "earning") {
+            var likeButton = PT.dom.$("pt-action-like-{{ action.id }}");
+            likeButton.removeAttribute('fb-xfbml-state');
+
+            FB.XFBML.parse(likeButton);
+        }
+    });
+    
+});
+</script>

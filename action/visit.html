@@ -1,0 +1,26 @@
+{% load i18n %}
+{% load pt_tags %}
+
+<div class="pt-action-{{ action.id }} action-box {{ action.classname }}">
+    <div class="icon {{ action.classname }}"></div>
+    <div class="text">
+        <div class="pt-toggle-on">
+            <a href="{{ action.context.link }}" target="_blank" onclick="PT.action.activity.call({{ action.id }})">{{ action.context.name }}</a>
+            <p>{{ action.context.description }}</p>
+        </div>
+        <div class="pt-toggle-wait ajax-loader"></div>
+        <div class="pt-toggle-off">Thanks for your view1231231231</div>
+    </div>
+    <div class="points">{% blocktrans with points=action.parameters.points|default:"100" %}+ {{ points }} points{% endblocktrans %}</div>
+</div>
+
+<script type="text/javascript">
+window.ptReady.push(function () {
+    var now = new Date();
+    var ref_id = "{{ action.classname }}" + "-"+ "{{ action.id }}" + "-" + now.getUTCFullYear() + "-" + now.getUTCMonth() + "-" + now.getUTCDate();
+    var params = {{ action.parameters|jsonify }};
+    params.ref_id = ref_id;
+    PT.action.activity.register("{{ action.id }}", ["{{ action.name }}", params], "pt-action-{{ action.id }}");
+});
+</script>
+

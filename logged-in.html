@@ -1,0 +1,212 @@
+{% load i18n %}
+
+<div id="nav" class="nav clearfix"></div>
+
+{% if not auth.features.branding_removept %}
+<a href="/?src=mast&src_key={{ publisher.key }}" target="_blank"><div id="powered-by-punchtab"></div></a>
+{% endif %}
+
+<div id="header" class="clearfix">
+    <div class="clearfix">
+        <div class="user float clearfix">
+            <img class="pt-user avatar float" data-attribute="avatar" data-to="src" src="" />
+            <div class="user-info float">
+                <div class="pt-user username user-summary" data-attribute="name"></div>
+                <div>(<a href="#" id="logout" class="logout">{% blocktrans %}not you?{% endblocktrans %}</a>)</div>
+            </div>
+        </div>
+
+        <ul class="meta float-right clearfix">
+            <li id="summary-user-points">
+                <span class="pt-user redeemable-points" data-attribute="redeemable_points"></span>
+                <div class="label">{% blocktrans %}redeemable points{% endblocktrans %}</div>
+            </li>
+            <li id="summary-user-redemptions">
+                <span class="pt-user" data-attribute="redemptions"></span>
+                <div class="label">{% blocktrans %}redemptions{% endblocktrans %}</div>
+            </li>
+        </ul>
+    </div>
+    <div id="user-summary" class="clearfix">
+        <div class="float clearfix activities">
+            <h2>{% blocktrans %}Your recent activities{% endblocktrans %}</h2>
+            <div class="pt-user-activity"></div>
+        </div>
+        <div class="float-right clearfix redemptions">
+            <h2>{% blocktrans %}Your redemptions{% endblocktrans %}</h2>
+            <div class="pt-user-redemption" data-by-slide="6"></div>
+        </div>
+    </div>
+    <div class="arrow user-summary">&#9660;</div>
+</div>
+
+
+<div id="overview" class="view">
+    <div id="featured-action" class="float">
+        <h1>{% blocktrans %}You can earn points today!{% endblocktrans %}</h1>
+        <div class="actions">
+            <div class="clearfix">
+                {% for action in actions %}
+                    {% if forloop.counter0 < 2 %}
+                        {% include folder|add:'/action/'|add:action.name|add:".html" %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <button class="goto-earning large beta" onclick="PT.event.trigger('mast.show', {view: 'earning'});return false;">{% blocktrans %}Earn more points!{% endblocktrans %} &raquo;</button>
+        </div>
+        <div id="notification">
+            <p class="message warning opted-out">{% blocktrans %}You are currently opted-out from this loyatly program.{% endblocktrans %}</p>
+            <p class="message success welcome"></p>
+        </div>
+    </div>
+    <div id="recent-activity" class="float">
+        <h3>{% blocktrans %}Recent Activity{% endblocktrans %}</h3>
+        <div class="pt-loyalty-stream" data-label='{% blocktrans with points="%(points)s" activityReason="%(activityReason)s" datetime="<span class=\"pt-activity-date\">%(datetime)s</span>" %}earned {{ points }} points {{ activityReason }} {{ datetime }}{% endblocktrans %}'></div>
+    </div>
+    <div id="featured-catalog">
+        <h3 class="clearfix">
+            <div class="float">{% blocktrans %}Featured Catalog{% endblocktrans %}</div>
+            <div class="float-right">
+                <a href="#" class="goto-catalog" onclick="PT.event.trigger('mast.show', {view: 'catalog'}); return false;">{% blocktrans %}More{% endblocktrans %} &raquo;</a>
+            </div>
+        </h3>
+        <div class="pt-catalog" data-by-slide="1" data-keys="false">
+            <script type="text/html" class="pt-reward-preview">
+                <div class="reward-name">[[name]]</div>
+                <div class="reward-image pt-reward-image-default pt-reward-image-[[id]]"></div>
+            </script>
+        </div>
+    </div>
+</div>
+
+<div id="earning" class="view clearfix">
+    {% spaceless %}
+    {% for action in actions %}
+ 
+        {% if forloop.counter0 >= 2 %}
+            {% include folder|add:'/action/'|add:action.name|add:".html" %}
+        {% endif %}
+
+    {% endfor %}
+    {% endspaceless %}
+</div>
+
+<div id="leaderboard" class="view clearfix">
+    <h3>{% blocktrans %}30-day leaderboard{% endblocktrans %}</h3>
+    <div class="pt-leaderboard" data-with-me="true" data-limit="10" data-label="%(points)s" data-separator="true"></div>
+</div>
+
+<div id="catalog" class="view clearfix">
+    <div class="pt-catalog" data-by-slide="5">
+        <script type="text/html" class="pt-reward-preview">
+            <div class="pt-reward-container [[statusString]]">
+                <div class="reward float">
+                    <div class="description">
+                        <div class="reward-image pt-reward-image-default pt-reward-image-[[id]]">
+                            <div class="options">
+                                <div class="points">{% blocktrans with points="[[pointsIntcomma]]" %}{{ points }} points{% endblocktrans %}</div>
+                                <div class="per-user [[hasPerUser]]">{% blocktrans with per_user="[[per_user]]" %}{{ per_user }} per user{% endblocktrans %}</div>
+                                <div class="inventory [[hasInventory]]">{% blocktrans with inventory="[[inventory]]" %}{{ inventory }} rewards left{% endblocktrans %}</div>
+                            </div>
+                        </div>
+                        <h2>[[name]]</h2>
+                        <p>[[description]]</p>
+                    </div>
+                    <div class="more">
+                        <div class="pt-reward-action">
+                            <div class="pt-reward-limitedby inventory">{% blocktrans %}No rewards left{% endblocktrans %}</div>
+                            <div class="pt-reward-limitedby points">{% blocktrans with points="[[ pointsDifference ]]" %}{{ points }} points to go{% endblocktrans %}</div>
+                            <div class="pt-reward-limitedby per_user">{% blocktrans %}You’ve redeemed this prize. Nice work!{% endblocktrans %}</div>
+                            <div class="pt-reward-limitedby connect">{% blocktrans %}You need to be connect in order to redeem this reward{% endblocktrans %}</div>
+                            <div class="pt-reward-limitedby none">
+                                <form>
+                                    <input type="hidden" name="reward_id" value="[[id]]">
+                                    <button type="submit" name="">{% blocktrans %}Redeem Now{% endblocktrans %}</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </script>
+        <script type="text/html" class="pt-catalog-pagination">
+            {% if publisher.id == 17 or not custom_catalog %}
+            <div class="catalog-disclaimer">{% blocktrans %}* The merchants represented are not sponsors of the rewards or otherwise affiliated with PunchTab. The logos and other identifying marks attached are trademarks of and owned by each represented company and/or its affiliates. Please visit each company's website for additional terms and conditions.{% endblocktrans %}</div>
+            {% endif %}
+            <div class="slider-interaction clearfix">
+                <div class="previous float" style="display: none; "></div>
+                <div class="pages"></div>
+                <div class="next float-right" style="display: none; "></div>
+            </div>
+        </script>
+        <script type="text/html" class="pt-reward-detail">
+            <div class="clearfix">
+                <div class="reward-detail-image-wrapper float">
+                    <div class="reward-image pt-reward-image-default pt-reward-image-[[id]]"></div>
+                </div>
+                <div class="reward-detail-text float">
+                    <h2>{% blocktrans %}Turn those points into a prize{% endblocktrans %}</h2>
+                    <h3>[[name]]</h3>
+                    <p>[[description]]</p>
+                    <form>
+                        [[#shipping_address]]
+                        <p></p>
+                        <div>
+                            <input type="text" name="first_name" placeholder="{% blocktrans %}First Name{% endblocktrans %}" />
+                            <input type="text" name="last_name" placeholder="{% blocktrans %}Last Name{% endblocktrans %}" />
+                        </div>
+                        <div>
+                            <input type="text" name="address_1" placeholder="{% blocktrans %}Address{% endblocktrans %}" />
+                            <input type="text" name="city" placeholder="{% blocktrans %}City{% endblocktrans %}" />
+                            <input type="text" name="zip_code" placeholder="{% blocktrans %}Zip Code{% endblocktrans %}" />
+                            <input type="text" name="state" placeholder="{% blocktrans %}State{% endblocktrans %}" />
+                        </div>
+                        <div>
+                            <input type="text" name="country" placeholder="{% blocktrans %}Country{% endblocktrans %}" />
+                        </div>
+                        [[/shipping_address]]
+                        <br>
+                        <input type="hidden" name="reward_id" value="[[id]]">
+                        <button type="submit" name="">{% blocktrans %}Redeem{% endblocktrans %}</button>
+                        <a href="#" class="cancel">{% blocktrans %}Cancel{% endblocktrans %}</a>
+                        <p>{% blocktrans with points="[[ pointsDifference ]]" %}You will have {{ points }} points left.{% endblocktrans %}</p>
+                    </form>
+                </div>
+            </div>
+        </script>
+        <script type="text/html" class="pt-reward-redeemed">
+            <div class="clearfix">
+                <div class="reward-detail-image-wrapper float">
+                    <div class="reward-image pt-reward-image-default pt-reward-image-[[id]]"></div>
+                </div>
+                <div class="reward-detail-text float">
+                    <h2>Congrats!</h2>
+                    <p>{% blocktrans with points="[[ points ]]" name="[[ name ]]" %}You've redeemed {{ points }} points for {{ name }}{% endblocktrans %}</p>
+                    <p>[[description]]</p>
+                    <br>
+                    <p>{% blocktrans %}We'll contact you by e-mail with next steps shortly.{% endblocktrans %}</p>
+
+                    <div class="reward-detail-share">
+                        <a href="#" class="pt-share large"
+                            data-referral="true"
+                            data-link=""
+                            data-name=""
+                            data-caption=""
+                            data-picture=""
+                            data-description=""><i></i><span>{% blocktrans %}Share{% endblocktrans %}</span></a>
+                        <a href="#" class="pt-tweet large" data-referral="true" data-url="" data-text="I've just redeemed a new reward on {{ publisher.display_name }}"><i></i><span>{% blocktrans %}Tweet{% endblocktrans %}</span></a>
+                    </div>
+                    <form>
+                        <input type="hidden" name="reward_id" value="[[id]]">
+                        <a href="#" class="cancel">{% blocktrans %}Back to the catalog{% endblocktrans %}</a>
+                    </form>
+                </div>
+            </div>
+        </script>
+        <script type="text/html" class="pt-reward-error">
+            <div class="">[[&message]]</div>
+            <form><button type="reset" name="">{% blocktrans %}Back{% endblocktrans %}</button></form>
+        </script>
+    </div>
+</div>
+

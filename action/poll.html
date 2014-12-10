@@ -1,0 +1,53 @@
+{% load i18n %}
+{% load pt_tags %}
+
+<div class="pt-action-{{ action.id }} action-box {{ action.classname }}">
+    
+    <div class="text">
+        <div class="pt-toggle-on">
+            <form name="poll">
+                <h3>{{ action.parameters.question }}</h3>
+                <ul>
+                    <li>
+                        <input type="radio" name="choice" value="{{ action.parameters.choice_one }}">
+                        {{ action.parameters.choice_one }}
+                        </input>
+                    </li>
+                
+                    <li>
+                        <input type="radio" name="choice" value="{{ action.parameters.choice_two }}">
+                        {{ action.parameters.choice_two}}
+                        </input>
+                    </li>
+                    {% if action.parameters.choice_three != None %}
+                    <li>
+                        <input type="radio" name="choice" value="{{ action.parameters.choice_three }}">
+                        {{ action.parameters.choice_three }}
+                        </input>
+                    </li>
+                    {% endif %}
+                </ul>    
+                <button type="submit" id="poll_submit" class="beta" >{% blocktrans %}SEND{% endblocktrans %}</button>
+            </form>
+            <div class="points">{% blocktrans with points=action.parameters.points|default:"100" %}+ {{ points }} points{% endblocktrans %}</div>
+        </div>
+        <div class="pt-toggle-wait ajax-loader"></div>
+        <div class="pt-toggle-off">
+            <div class="icon {{ action.classname }}"></div>
+            {% blocktrans %}Thanks for submitting your taste profile!{% endblocktrans %}
+        </div>
+    </div>
+</div>
+
+<script>
+window.ptReady.push(function () {
+    cover("{{ action.id }}");
+
+    PT.action.activity.register("{{ action.id }}", ["{{ action.name }}",{"ref_id": {{ action.parameters.ref_id }}, "points":{{ action.parameters.points }} }], "pt-action-{{ action.id }}");
+
+    PT.dom.onsubmit(document.forms.poll, function (data) {
+        PT.action.activity.call("{{ action.id }}", {value: data.choice});
+    });
+    
+});
+</script>

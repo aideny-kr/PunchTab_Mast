@@ -1,0 +1,13 @@
+{% load i18n %}
+{% load pt_tags %}
+
+<script type="text/javascript">
+window.ptReady.push(function () {
+    PT.action.activity.register("{{ action.id }}", ["{{ action.name }}", {{ action.parameters|jsonify }}], 'pt-action-welcome', undefined, function (state) {
+        if (state === true) {
+            notification('welcome');
+            PT.action.activity.call("{{ action.id }}");
+        }
+    });
+});
+</script>

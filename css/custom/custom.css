@@ -1,0 +1,381 @@
+html {
+    overflow-y: auto;
+}
+
+/* Global */
+a {
+    color: #97C74D;
+}
+a:hover, a:visited, a:focus {
+    color: #799F3E;
+}
+
+/* Buttons */
+button, .btn a {
+    background: #8dc63f;
+    background: -moz-linear-gradient(top,  #8dc63f 0%, #8dc63f 50%, #7fb239 51%, #7fb239 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8dc63f), color-stop(50%,#8dc63f), color-stop(51%,#7fb239), color-stop(100%,#7fb239));
+    background: -webkit-linear-gradient(top,  #8dc63f 0%,#8dc63f 50%,#7fb239 51%,#7fb239 100%);
+    background: -o-linear-gradient(top,  #8dc63f 0%,#8dc63f 50%,#7fb239 51%,#7fb239 100%);
+    background: -ms-linear-gradient(top,  #8dc63f 0%,#8dc63f 50%,#7fb239 51%,#7fb239 100%);
+    background: linear-gradient(top,  #8dc63f 0%,#8dc63f 50%,#7fb239 51%,#7fb239 100%);
+    margin: auto;
+    color: #fff;
+    text-shadow: 1px 0px 0 rgba(0,0,0,.4);
+    border: none;
+    border-radius: 0px;
+    font-family: cabin,sans-serif;
+    font-weight: normal;
+    padding: 5px 15px;
+}
+button:hover, .btn a:hover {
+	background: #85ba3c;
+	background: -moz-linear-gradient(top,  #85ba3c 0%, #8dc63f 50%, #7fb239 51%, #7fb239 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8dc63f), color-stop(50%,#8dc63f), color-stop(51%,#7fb239), color-stop(100%,#7fb239));
+	background: -webkit-linear-gradient(top,  #85ba3c 0%,#8dc63f 50%,#7fb239 51%,#7fb239 100%);
+	background: -o-linear-gradient(top,  #85ba3c 0%,#8dc63f 50%,#7fb239 51%,#7fb239 100%);
+	background: -ms-linear-gradient(top,  #85ba3c 0%,#8dc63f 50%,#7fb239 51%,#7fb239 100%);
+	background: linear-gradient(top,  #85ba3c 0%,#8dc63f 50%,#7fb239 51%,#7fb239 100%);
+	
+}
+button.beta, .btn.beta a {
+    filter: none;
+    border-top: 1px solid #B24A19;
+    background: #B24A1A;
+    background: -webkit-gradient(linear, left top, left bottom, from(#D55F2C), to(#B24A1A));
+    background: -webkit-linear-gradient(top, #D55F2C, #B24A1A);
+    background: -moz-linear-gradient(top, #D55F2C, #B24A1A);
+    background: -ms-linear-gradient(top, #D55F2C, #B24A1A);
+    background: -o-linear-gradient(top, #D55F2C, #B24A1A);
+    padding: 5px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: white;
+    font-family: Helvetica, Arial, Sans-Serif;
+    text-decoration: none;
+    vertical-align: middle;
+    font-weight: normal;
+    margin: 0 auto;
+}
+.btn.beta:hover, button.beta:hover {
+    border-top-color: #B24A1A;
+    background: #B24A1A;
+}
+
+
+/* Container */
+#container {
+    background: url(../../images/custom/background.png) no-repeat;
+    height: 580px;
+    border-radius: 0;
+}
+#featured-catalog .slide {
+    border-radius: 0;
+}
+.logged-out {
+    background: url(../../images/custom/logged-out.png) no-repeat;
+    background-position: 0 80px;
+}
+
+
+/* Navigation */
+#nav {
+    background: none;
+}
+#nav a {
+    color: #fff;
+    font-weight: normal;
+}
+#nav li.current a {
+    background-color: #fff;
+    border-radius: 4px;
+	color: #6cae07;
+}
+#nav a:hover, #nav a:focus, #nav li.current a:hover, #nav li.current a:focus {
+    color: #6cae07;
+}
+
+/* Header */
+#header {
+    background: none repeat scroll 0 0 #f0f0f0;
+    color: #000;
+    border-bottom: 1px solid #ccc;
+}
+#header .meta li span.redeemable-points {
+    background-image: url(../../images/custom/icon-redeem.png);
+}
+#header .meta li span.redemptions {
+    background-image: url(../../images/custom/icon-trophy.png);
+}
+#header #logout {
+    color: #707070;
+}
+#header #logout:hover {
+    color: #000;
+}
+
+.arrow {
+    color: #fff;
+    background-color: #282828;
+}
+
+/* Featured Actions */
+#featured-action {
+    width: 480px;
+}
+.actions {
+    margin-left: 20px;
+}
+.actions .action-box {
+    margin: 6px 5px;
+}
+.actions button.large {
+    margin-top: 10px !important;
+    padding: 15px !important;
+}
+
+#recent-activity h3, #featured-catalog h3 {
+    color: white;
+    background-color: #282828;
+}
+
+
+/* Featured Catalog */
+#featured_catalog {
+    background: none;
+    background-color: #fff;
+}
+#featured-catalog .slide {
+    background: url(../../images/custom/featured-catalog-background.png) no-repeat;
+}
+#featured-catalog .pt-catalog {
+    height: 223px;
+}
+#featured-catalog .reward-image {
+    height: 184px;
+}
+
+
+/* Earn more! */
+#earning {
+    padding-top: 6px;
+}
+#earning .row {
+    margin-left: 13px;
+}
+/* Actions */
+.action-box {
+    border: 10px solid #D8EFB7;
+    padding: 5px;
+    margin: 6px 10px;
+    width: 188px;
+    height: 155px;
+}
+.action-box.pt-toggle-state-off {
+    background-color: #6CAE07;
+}
+.action-box .points {
+    font-weight: bold;
+}
+.action-box .icon {
+    border-bottom: 1px dotted #CCC;
+    margin-bottom: 7px;
+    height: 70px;
+}
+.action-box .text {
+    font-weight: bold;
+}
+
+.action-box .icon.action-addtotimeline {
+    background-image: url(../../images/custom/action/like.png);
+}
+.action-box .icon.action-birthday {
+    background-image: url(../../images/custom/action/birthday.png);
+}
+.action-box .icon.action-follow {
+    background-image: url(../../images/custom/action/follow.png);
+}
+.action-box .icon.action-foursquare {
+    background-image: url(../../images/custom/action/foursquare.png);
+}
+.action-box .icon.action-gender {
+    background-image: url(../../images/custom/action/gender.png);
+}
+.action-box .icon.action-instagram {
+    background-image: url(../../images/custom/action/instagram.png);
+}
+.action-box .icon.action-like {
+    background-image: url(../../images/custom/action/like.png);
+}
+.action-box .icon.action-phone {
+    background-image: url(../../images/custom/action/phone.png);
+}
+.action-box .icon.action-pin {
+    background-image: url(../../images/custom/action/pin.png);
+}
+.action-box .icon.action-refer {
+    background-image: url(../../images/custom/action/refer.png);
+}
+.action-box .icon.action-subscribe {
+    background-image: url(../../images/custom/action/subscribe.png);
+}
+.action-box .icon.action-tweet, .action-box .icon.action-twitter {
+    background-image: url(../../images/custom/action/tweet.png);
+}
+.action-box .icon.action-view {
+    background-image: url(../../images/custom/action/view.png);
+}
+
+.action-box .icon.action-poll {
+    background-image: url(../../images/custom/action/poll.png);
+    border-bottom: none;
+    margin-top: 7px;
+}
+
+.action-box button {
+    width: 100%;
+}
+/* exceptions */
+.action-instagram .legend, .cover {
+    font-weight: bold;
+    color: #799F3E;
+}
+
+.action-poll h3{
+    font-weight: bold;
+    color: #799F3E;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.action-poll form ul li{
+    font-weight: bold;
+    font-size: 11px;
+    color: #799F3E;
+    text-align: left;
+    margin-left: 20px;
+    margin-bottom: 8px;
+}
+
+button#poll_submit{
+    width: 40%;
+    margin-bottom:10px;
+}
+
+
+.action-refer .cover {
+    font-size: 13px;
+}
+.action-refer strong {
+    font-weight: bold;
+    color: #434343;
+}
+.pt-referral {
+    margin-bottom: 5px;
+}
+
+/* Leaderboard */
+#leaderboard h3 {
+    margin-left: 25px;
+}
+.leaderboard-widget-container {
+    height: 375px;
+    margin: 0 16px;
+}
+
+/* Catalog */
+/* Reward */
+.reward {
+    background: none;
+    border: none;
+    width: 161px;
+}
+.reward:hover {
+	box-shadow: none;
+}
+.reward .description h2 {
+    color: #000;
+}
+.reward .reward-image {
+    background: none;
+}
+.reward .options {
+    background: url(../../images/custom/opacity.png) repeat;
+}
+.reward .more {
+    font-size: 16px;
+}
+
+/* Pagination */
+#catalog .slider-interaction {
+    padding-top: 0px;
+}
+.pages .page.current {
+    background-color: #799F3E;
+}
+#catalog .next {
+    right: 20px;
+}
+#catalog .previous {
+    left: 20px;
+}
+
+/* Redeem */
+#catalog .pt-catalog-reward-detail h2, #catalog .pt-catalog-reward-detail h3 {
+    font-size: 26px;
+    color: #6CAE07;
+}
+#catalog .pt-catalog-reward-detail p {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+/* Logged-out */
+.logged-out-rewards .pt-catalog-rewards, .logged-out-rewards .pt-catalog-rewards .slide {
+    width: 510px;
+}
+
+.logged-out-introduction {
+    visibility: hidden;
+}
+.logged-out-header {
+    background: none;
+}
+.logged-out-rewards h2,
+.logged-out-auth h2,
+.logged-out-reward-name {
+    display: none;
+}
+.logged-out-rewards .pt-catalog {
+    margin-top: 76px;
+    margin-left: 20px;
+}
+.logged-out-rewards .pt-catalog-rewards .slide {
+    width: 540px;
+}
+.logged-out-reward {
+    width: 160px;
+}
+
+/* connect */
+#connection {
+    right: -25px;
+    width: 50%;
+    height: 145px;
+}
+#connect {
+    filter: none;
+    background: url(../../images/custom/facebook-button.png) no-repeat center center;
+    width: 300px;
+    height: 43px;
+    text-indent: -9999px;
+}
+.rules a {
+    color: gray;
+    font-weight: bold;
+}
+.rules a:hover {
+    color: #000;
+}

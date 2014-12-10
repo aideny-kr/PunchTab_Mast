@@ -1,0 +1,31 @@
+{% load i18n %}
+{% load pt_tags %}
+
+<div class="pt-action-{{ action.id }} action-box {{ action.classname }}">
+    <div class="icon {{ action.classname }}"></div>
+    <div class="text">
+        <div class="pt-toggle-on">
+            <a href="http://pinterest.com/pin/create/button/?url={{ action.context.url }}&media={{ action.context.media }}&description={{ action.context.description }}"
+               class="pin-it-button"
+               style="background: url('//assets.pinterest.com/images/pinit6.png');font: 11px Arial, sans-serif; text-indent: -9999em; font-size: .01em; color: #CD1F1F; height: 20px; width: 43px; background-position: 0 -7px;"
+               count-layout="horizontal"
+               id="pin-button-{{ action.id }}"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a>
+        </div>
+        <div class="pt-toggle-off">{% blocktrans %}Thanks for your pin{% endblocktrans %}</div>
+    </div>
+    <div class="points">{% blocktrans with points=action.parameters.points|default:"100" %}+ {{ points }} points{% endblocktrans %}</div>
+</div>
+
+<script type="text/javascript">
+window.ptReady.push(function () {
+    PT.action.activity.register("{{ action.id }}", ["{{ action.name }}", {{ action.parameters|jsonify }}], "pt-action-{{ action.id }}");
+
+    var pinButton = PT.dom.$("pin-button-{{ action.id }}");
+    pinButton.onclick = function () {
+        PT.util.popup(pinButton.href, function () {
+            PT.action.activity.call("{{ action.id }}");
+        }, {title: "pinterest", width: 665, height: 300});
+        return false;
+    };
+});
+</script>
