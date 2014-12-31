@@ -321,7 +321,7 @@ input:focus {
     width: 50px;
     height: 50px;
     margin-right: 8px;
-    border: 5px solid rgba(0, 0, 0, .2);  
+    border: 2px solid #DB9F2D
 }
 #header .username {
     font-size: 24px;
