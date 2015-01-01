@@ -289,7 +289,7 @@ input:focus {
     color: #fff;
 }
 #nav li.current a {
-	color: #0db8fb;
+	color: #e6bd6e;
 }
 #nav a:hover, #nav a:focus, #nav li.current a:hover, #nav li.current a:focus {
     color: #DB9F2D;
