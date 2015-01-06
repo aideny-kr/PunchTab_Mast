@@ -784,7 +784,8 @@ input[name=zip] {
 
 
 /* Logged out */
-.logged-out {
+.
+out {
 }
 .logged-out-header {
     background-color: #282828;
@@ -989,3 +990,9 @@ input[name=zip] {
 .logged-out-auth-email .email-forgot-email {
     font-style: italic;
 }
+
+button.beta, .btn.beta a { 
+  border-radius: 5px;
+  background: #DB9F2D;
+}
+

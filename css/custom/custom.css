@@ -41,7 +41,7 @@ button:hover, .btn a:hover {
 button.beta, .btn.beta a {
     filter: none;
     border-top: 1px solid #B24A19;
-    background: #B24A1A;
+    background: ;
     background: -webkit-gradient(linear, left top, left bottom, from(#D55F2C), to(#B24A1A));
     background: -webkit-linear-gradient(top, #D55F2C, #B24A1A);
     background: -moz-linear-gradient(top, #D55F2C, #B24A1A);
@@ -50,7 +50,7 @@ button.beta, .btn.beta a {
     padding: 5px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
-    border-radius: 3px;
+    border-radius: 5px;
     color: white;
     font-family: Helvetica, Arial, Sans-Serif;
     text-decoration: none;
