@@ -989,3 +989,8 @@ input[name=zip] {
 .logged-out-auth-email .email-forgot-email {
     font-style: italic;
 }
+
+button.beta, .btn.beta a { 
+  border-radius: 5px;
+  background: #DB9F2D;
+}
