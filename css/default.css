@@ -989,3 +989,52 @@ input[name=zip] {
 .logged-out-auth-email .email-forgot-email {
     font-style: italic;
 }
+
+/******************************************** 
+
+	Custom Overriding Rules 
+	Edited by Tisun 
+
+*********************************************/
+
+button.beta, .btn.beta a { 
+  border-radius: 5px;
+  background: #DB9F2D;
+  margin: 17px;
+  box-shadow: 0 7px 0px rgba(182, 130, 31, .9);
+}
+
+button.beta:hover {
+    margin-top: 19px;
+    background: #dfa943;
+    box-shadow: 0 5px 0px rgba(182, 130, 31, .9);  
+}
+
+button.pt-connect.beta{
+	margin: 2px;
+}
+button.pt-connect.beta:hover {
+	margin-top: 4px;
+}
+button.pt-toggle-on.beta {
+    margin: 0px;
+}
+
+button[type="submit"] {
+    margin-top: 0px;
+}
+
+button[type="submit"]:hover {
+    margin-top: 2px;
+}
+
+
+
+
+
+
+
+
+
+
+
