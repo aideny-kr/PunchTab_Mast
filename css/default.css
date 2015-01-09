@@ -990,7 +990,7 @@ input[name=zip] {
     font-style: italic;
 }
 
-<<<<<<< HEAD
+
 /******************************************** 
 
 	Custom Overriding Rules 
@@ -1029,19 +1029,8 @@ button[type="submit"]:hover {
     margin-top: 2px;
 }
 
-
-
-
-
-
-
-
-
-
-
-=======
 button.beta, .btn.beta a { 
   border-radius: 5px;
   background: #DB9F2D;
 }
->>>>>>> 00bd48ab5a18e13cdd64e328af233d608ec0c556
+
