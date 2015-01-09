@@ -1,10 +1,12 @@
 /* Fonts */
 @import url(http://fonts.googleapis.com/css?family=Cabin);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url (http://fonts.googleapis.com/css?family=Muli);
+@import url(http://fonts.googleapis.com/css?family=Roboto);
 
 /* Global */
 body {
-    font-family: 'Open Sans', Arial, sans-serif;
+    font-family: 'Muli', sans-serif;
     font-size: 14px;
     line-height: 1.231;
     color: #434343;
@@ -270,7 +272,7 @@ input:focus {
 
 /* Nav */
 #nav {
-    background-color: #282828;
+    background-color: #4C4C4C;
     height: 30px;
     min-height: 30px;
     border-top-left-radius: 5px;
@@ -281,7 +283,7 @@ input:focus {
     font-weight: normal;
 }
 #nav ul li a {
-    font-family: 'Cabin', sans-serif;
+    font-family: 'Muli', sans-serif;
     font-size: 24px;
     padding: 10px;
 }
@@ -307,10 +309,7 @@ input:focus {
 
 /* Header */
 #header {
-    font-weight: bold;
-    background-color: #434343;
-    background-image: url(../images/noise-bg.jpg);
-    color: #fff;
+    background-color: #fff;
     height: 60px;
     min-height: 60px;
 }
@@ -321,16 +320,17 @@ input:focus {
     width: 50px;
     height: 50px;
     margin-right: 8px;
-    border: 2px solid #DB9F2D
 }
+
 #header .username {
     font-size: 24px;
     font-weight: bold;
     line-height: 36px;
+    color: #000000;
 }
 #header #logout {
     font-size: 12px;
-    color: #fff;
+    color: #000000;
 }
 a.logout:hover {
     color: #36AFCE;
@@ -344,10 +344,18 @@ a.logout:hover {
     margin: 0 15px 0 0;
 }
 #header .meta li span.redeemable-points {
-    background-image: url(../images/icon-target.png);
+    color: #DB9F2D;
+    font-weight: 800;
 }
+
+#summary-user-points .label {
+    font-weight: 600;
+}
+
 #header .meta li span.redemptions {
     background-image: url(../images/icon-trophy.png);
+    color: #DB9F2D;
+    font-weight: 800;
 }
 #header .meta li span {
     display: block;
@@ -357,6 +365,24 @@ a.logout:hover {
     margin-bottom: 5px;
     background-repeat: no-repeat;
     text-align: right;
+}
+
+#summary-user-redemptions .pt-user {
+    color: #DB9F2D;
+    font-weight: 800;
+}
+
+#summary-user-redemptions .label {
+    font-weight: 600;
+}
+
+#header .arrow {
+    color: #DB9F2D;
+}
+
+#logged-in .pt-user-activity-separator {
+    color: #4C4C4C ;
+    font-weight: 100;
 }
 
 
@@ -1033,4 +1059,5 @@ button.beta, .btn.beta a {
   border-radius: 5px;
   background: #DB9F2D;
 }
+
 
