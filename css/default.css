@@ -1058,7 +1058,7 @@ button.pt-connect.beta:hover {
 /* adding logo to background */
 
 #nav {
-    background: #4c4c4c url(http://cdn.shopify.com/s/files/1/0313/3757/t/10/assets/logo.png?7078) no-repeat 98% 20%;
+    background: #4c4c4c url(../images/Tisun-Logo.gif) no-repeat 98% 75%;
     background-size: 100px;
 }
 
