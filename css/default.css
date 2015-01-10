@@ -1037,27 +1037,33 @@ button.beta:hover {
     box-shadow: 0 5px 0px rgba(182, 130, 31, .9);  
 }
 
+button.beta[type="submit"] {
+box-shadow: 0 2px 0px rgba(182, 130, 31, .9);
+margin-top: 0px;
+}
+
+button.beta[type="submit"]:hover {
+    margin-top: 2px;
+    box-shadow: 0 0 0;
+}
+
 button.pt-connect.beta{
 	margin: 2px;
 }
 button.pt-connect.beta:hover {
 	margin-top: 4px;
 }
-button.pt-toggle-on.beta {
-    margin: 0px;
-}
-
-button[type="submit"] {
-    margin-top: 0px;
-}
-
-button[type="submit"]:hover {
-    margin-top: 2px;
-}
 
 button.beta, .btn.beta a { 
   border-radius: 5px;
   background: #DB9F2D;
+}
+
+/* adding logo to background */
+
+#nav {
+    background: #4c4c4c url(http://cdn.shopify.com/s/files/1/0313/3757/t/10/assets/logo.png?7078) no-repeat 98% 20%;
+    background-size: 100px;
 }
 
 
