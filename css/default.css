@@ -1067,3 +1067,19 @@ button.pt-connect.beta:hover {
 .arrow {
     background-color: #DB9F2D;
 }
+
+/* adding background color */
+
+#logged-in {
+    background-color: #fafafa; 
+}
+
+#container {
+    background-image: none;
+    background-color: #fafafa;
+}
+
+#featured-catalog .slide {
+     background-image: none;
+     background-color: #fafafa;
+}   
