@@ -377,7 +377,7 @@ a.logout:hover {
 }
 
 #header .arrow {
-    color: #DB9F2D;
+    color: #FDF5E7;
 }
 
 #logged-in .pt-user-activity-separator {
@@ -1060,6 +1060,12 @@ button.pt-connect.beta:hover {
 #nav {
     background: #4c4c4c url(../images/Tisun-Logo.gif) no-repeat 98% 215%;
     background-size: 85px;
+}
+
+/* adding background to cursor */
+
+.arrow {
+    background-color: #DB9F2D;
 }
 
 
