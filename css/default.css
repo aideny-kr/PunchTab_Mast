@@ -411,8 +411,13 @@ a.logout:hover {
 }
 
 /* Recent Activity */
+
+#recent-activity h3 {
+    color: #fff; 
+    background-color: #737373;
+}
 .pt-activity-wrapper {
-    padding: 0 10px 16px 10px;
+    padding: 5px 10px 16px 10px;
 }
 .pt-activity-username {
     font-weight: bold;
@@ -434,7 +439,10 @@ a.logout:hover {
 }
 #featured-catalog h3 {
     color: #fff;
-    background-color: #282828;
+    background-color: #737373;
+}
+#featured-catalog a {
+    color: #DB9F2D;
 }
 #featured-catalog .reward-name {
     font-size: 16px;
@@ -1058,7 +1066,7 @@ button.pt-connect.beta:hover {
 /* adding logo to background */
 
 #nav {
-    background: #4c4c4c url(../images/Tisun-Logo.gif) no-repeat 98% 215%;
+    background: #737373 url(../images/Tisun-Logo.gif) no-repeat 98% 215%;
     background-size: 85px;
 }
 
@@ -1070,12 +1078,7 @@ button.pt-connect.beta:hover {
 
 /* adding background color */
 
-#logged-in {
-    background-color: #fafafa; 
-}
-
-#container, #featured-catalog .slide{
-    background-image: none;
+#container, #logged-in, #featured-catalog .slide {
     background-color: #fafafa;
+    background-image: none; 
 }
-
