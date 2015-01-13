@@ -417,7 +417,7 @@ a.logout:hover {
     background-color: #737373;
 }
 .pt-activity-wrapper {
-    padding: 5px 10px 16px 10px;
+    padding: 0 10px 16px 10px;
 }
 .pt-activity-username {
     font-weight: bold;
