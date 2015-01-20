@@ -622,7 +622,8 @@ iframe.twitter-follow-button {
     background-color: #F5F5F5;
 }
 .pt-leaderboard .user-container.current-user {
-    background-color: #FDFFEA;
+    background-color: #fbf3e5;
+    border: 1px solid #f3dcb2;
 }
 #leaderboard .scroll {
     text-align: center
