@@ -1093,3 +1093,11 @@ button.pt-connect.beta:hover {
 #leaderboard img {
     border-radius: 50%;
 }
+
+/* changing font of score on leaderboard */
+
+#leaderboard div.score {
+    color: #DB9F2D; 
+    font-size: 125%;
+    font-weight: 600
+}
