@@ -277,6 +277,7 @@ input:focus {
     height: 30px;
     min-height: 30px;
     border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 #nav ul li {
     margin: 0 15px 0 0;
@@ -1085,4 +1086,10 @@ button.pt-connect.beta:hover {
 #container, #logged-in, #featured-catalog .slide {
     background-color: #fafafa;
     background-image: none; 
+ }
+
+/* changing leaderboard avatar to circular */
+
+#leaderboard img {
+    border-radius: 50%;
 }
