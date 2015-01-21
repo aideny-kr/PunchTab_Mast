@@ -1101,3 +1101,9 @@ button.pt-connect.beta:hover {
     font-size: 125%;
     font-weight: 600
 }
+
+/* changing color of reward image header */
+
+#catalog h2 {
+    color: #DB9F2D;
+}
