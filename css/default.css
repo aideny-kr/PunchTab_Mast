@@ -873,8 +873,8 @@ input[name=zip] {
 }
 .logged-out-circle-step {
     position: absolute;
-    right: 20px;
-    top: 0px;
+    right: 19px;
+    top: 1px;
     width: 40px;
     height: 40px;
     font-weight: bold;
