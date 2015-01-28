@@ -1067,6 +1067,13 @@ button.pt-connect.beta:hover {
 	margin-top: 4px;
 }
 
+button[type="submit"] {
+  border-radius: 5px;
+  background: #DB9F2D;
+  margin: 5px;
+  box-shadow: 0 3px 0px rgba(182, 130, 31, .9);
+  color: #FFF;
+}
 
 /* adding logo to background */
 
