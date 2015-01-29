@@ -1074,7 +1074,14 @@ button[type="submit"] {
   box-shadow: 0 3px 0px rgba(182, 130, 31, .9);
   color: #FFF;
 }
-
+button[type="signupemail"] {
+  border-radius: 5px;
+  background: #696969;
+  margin: 5px;
+  box-shadow: 0 3px 0px rgba(76, 76, 76, 1); 
+  color: #FFF;
+  width: 173px; height: 35px;
+}
 /* adding logo to background */
 
 #nav {
@@ -1113,4 +1120,8 @@ button[type="submit"] {
 
 #catalog h2 {
     color: black;
+}
+/* changing color of Sign up with email*/
+a.goto-email-signup {
+    color: white;
 }
