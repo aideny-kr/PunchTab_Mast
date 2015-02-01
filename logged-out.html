@@ -74,17 +74,19 @@
                         <div class="float-center">
                             <h2>{% blocktrans %}Sign in!{% endblocktrans %}</h2>
                         </div>
-                    </div>  
+                    </div>
                     <ul>
-                        <li><button type ="signupemail"><i class="fa fa-envelope-o"></i> <a href="#" class="goto-email-signup">{% blocktrans %}Sign up with email{% endblocktrans %}</a></button><li>
                         <li><input type="text" name="email" placeholder="{% blocktrans %}Email Address{% endblocktrans %}"></li>
                         <li><input type="password" name="password" placeholder="{% blocktrans %}Password{% endblocktrans %}"></li>
                         <li><button type="submit">{% blocktrans %}Log in{% endblocktrans %}</button></li>
                         <li class="error notification"></li>
                     </ul>
                     <a href="#" class="goto-email-forgot">{% blocktrans %}forgot password?{% endblocktrans %}</a>
+                    <ul>
+                        <li><button type="facebook" id="connect"><i class="fa fa-facebook"></i> {% blocktrans %}Log in with Facebook{% endblocktrans %}</button></li>
+                        <li><button type ="signupemail"><i class="fa fa-envelope-o"></i> <a href="#" class="goto-email-signup">{% blocktrans %}Sign up with email{% endblocktrans %}</a></button></li>
+                    </ul>
                 </form>
-
                 <form name="email-signup" class="email-signup">
                     <div class="clearfix logged-out-auth-title">
                         <div class="float">
@@ -154,10 +156,6 @@
                 <h2>{% blocktrans %}Get Started! Log in Now{% endblocktrans %}</h2>
             {% endif %}
 
-            <div class="logged-out-auth-facebook">
-                <button class="facebook large" id="connect">{% blocktrans %}Log in with Facebook{% endblocktrans %}</button>
-            </div>
-        </div>
     {% endif %}
 
     <div class="rules">
