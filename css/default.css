@@ -971,7 +971,7 @@ input[name=zip] {
     text-align: center;
 }
 
-.l .logged-out-auth-email {
+.logged-out-auth.both .logged-out-auth-email {
     height: 185px;
     float: left;
 }
@@ -987,6 +987,14 @@ input[name=zip] {
 }
 .logged-out-auth.both .logged-out-auth-email .email-login .logged-out-auth-title {
     margin-right: 30px;
+}
+.logged-out-auth.both .logged-out-auth-facebook {
+    width: 200px;
+    float: left;
+}
+#connection .logged-out-auth.both .logged-out-auth-facebook #connect {
+    margin-top: 45px;
+    font-size: 18px;
 }
 /* email signup */
 .logged-out-auth-email form {

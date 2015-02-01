@@ -84,7 +84,7 @@
                     <a href="#" class="goto-email-forgot">{% blocktrans %}forgot password?{% endblocktrans %}</a>
                     <ul>
                         <li><button type="facebook" id="connect"><i class="fa fa-facebook"></i> {% blocktrans %}Log in with Facebook{% endblocktrans %}</button></li>
-                        <li><button type ="signupemail"><i class="fa fa-envelope-o"></i> <a href="#" class="goto-email-signup">{% blocktrans %}Sign up with email{% endblocktrans %}</a></button></li>
+                        <li><button type="signupemail"><i class="fa fa-envelope-o"></i> <a href="#" class="goto-email-signup">{% blocktrans %}Sign up with email{% endblocktrans %}</a></button></li>
                     </ul>
                 </form>
                 <form name="email-signup" class="email-signup">
@@ -155,9 +155,8 @@
             {% else %}
                 <h2>{% blocktrans %}Get Started! Log in Now{% endblocktrans %}</h2>
             {% endif %}
-
+   </div>
     {% endif %}
-
     <div class="rules">
         <p>
             <a href="/rules/program?key={{ publisher.key }}" target="_blank">{% blocktrans %}Program Rules{% endblocktrans %}</a>
