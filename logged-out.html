@@ -71,7 +71,7 @@
             <div class="logged-out-auth-email">
                 <form name="email-login" class="email-login" style="display: block;">
                     <div class="clearfix logged-out-auth-title">
-                        <div class="float-center">
+                        <div class="signup">
                             <h2>{% blocktrans %}Sign in!{% endblocktrans %}</h2>
                         </div>
                     </div>
@@ -80,12 +80,20 @@
                         <li><input type="password" name="password" placeholder="{% blocktrans %}Password{% endblocktrans %}"></li>
                         <li><button type="submit">{% blocktrans %}Log in{% endblocktrans %}</button></li>
                         <li class="error notification"></li>
-                    </ul>
+                    </ul> 
                     <a href="#" class="goto-email-forgot">{% blocktrans %}forgot password?{% endblocktrans %}</a>
-                    <ul>
+                    <ul class="signup-buttons">
                         <li><button type="facebook" id="connect"><i class="fa fa-facebook"></i> {% blocktrans %}Log in with Facebook{% endblocktrans %}</button></li>
                         <li><button type="signupemail"><i class="fa fa-envelope-o"></i> <a href="#" class="goto-email-signup">{% blocktrans %}Sign up with email{% endblocktrans %}</a></button></li>
                     </ul>
+                    <div class="rules">
+                     <p>
+                         <a href="/rules/program?key={{ publisher.key }}" target="_blank">{% blocktrans %}Program Rules{%           endblocktrans %}</a>
+                     </p>
+                     <p>
+                          <a href="/privacy?key={{ publisher.key }}" target="_blank">{% blocktrans %}Privacy{% endblocktrans %}</a>
+                    </p>
+                    </div>
                 </form>
                 <form name="email-signup" class="email-signup">
                     <div class="clearfix logged-out-auth-title">
@@ -155,14 +163,4 @@
             {% else %}
                 <h2>{% blocktrans %}Get Started! Log in Now{% endblocktrans %}</h2>
             {% endif %}
-   </div>
     {% endif %}
-    <div class="rules">
-        <p>
-            <a href="/rules/program?key={{ publisher.key }}" target="_blank">{% blocktrans %}Program Rules{% endblocktrans %}</a>
-        </p>
-        <p>
-            <a href="/privacy?key={{ publisher.key }}" target="_blank">{% blocktrans %}Privacy{% endblocktrans %}</a>
-        </p>
-    </div>
-</div>

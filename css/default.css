@@ -1123,12 +1123,10 @@ button[type="signupemail"] {
 #catalog h2 {
     color: black;
 }
-/* changing color of Sign up with email*/
+/* Changes to email and Facebook buttons*/
 a.goto-email-signup {
     color: white;
 }
-
-/* facebook button changes */
 #connect button {
   border-radius: 5px;
   background-color: #5c79b8; 
@@ -1144,4 +1142,20 @@ a.goto-email-signup {
 button[type="facebook"] {
     background: #4e69a2; 
     margin: 2px;
+}
+.signup-buttons {
+    position: relative;
+    top: -70px;
+    right: -235px;
+}
+/*Repositioned 'Program Rules' and 'Privacy'*/
+.rules {
+    position: relative;
+    top: -200px;
+    right: -230px;
+}
+/*Repositioned 'Sign Up'*/
+.signup {
+    position: relative;
+    right: -10px;
 }
