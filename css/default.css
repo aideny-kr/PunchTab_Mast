@@ -1154,8 +1154,8 @@ button[type="facebook"] {
     top: -200px;
     right: -230px;
 }
-/*Repositioned 'Sign Up'*/
-.signup {
+/*Repositioned 'Sign In'*/
+div.signin {
     position: relative;
     top: 3px;
     right: -10px;
@@ -1179,8 +1179,20 @@ div.forgot-password {
     top: 3px;
     right: -1px;
 }
+/*Changes to 'sign up' section*/
+ul.signup {
+    position: relative;
+    top: -15px;
+    right: 40px;
+}
+div.signup {
+    position: relative;
+    top: 3px;
+    right: 38px;
+}
+/* Repositioned 'back to login'*/
 div.back-login {
     position: relative;
-    right: -200px;
+    right: -190px;
     top: -22px;
 }

@@ -71,7 +71,7 @@
             <div class="logged-out-auth-email">
                 <form name="email-login" class="email-login" style="display: block;">
                     <div class="clearfix logged-out-auth-title">
-                        <div class="signup">
+                        <div class="signin">
                             <h2>{% blocktrans %}Sign in!{% endblocktrans %}</h2>
                         </div>
                     </div>
@@ -97,14 +97,14 @@
                 </form>
                 <form name="email-signup" class="email-signup">
                     <div class="clearfix logged-out-auth-title">
-                        <div class="float">
-                            <h2>{% blocktrans %}Sign up for an account{% endblocktrans %}</h2>
+                        <div class="signup">
+                            <h2>{% blocktrans %}Sign up to be a member{% endblocktrans %}</h2>
                         </div>
-                        <div class="float-right">
+                        <div class="back-login">
                             <a href="#" class="goto-email-login">{% blocktrans %}Back to login{% endblocktrans %}</a>
                         </div>
                     </div>
-                    <ul>
+                    <ul class="signup">
                         <li><input type="text" name="email" placeholder="{% blocktrans %}Enter your email address{% endblocktrans %}"></li>
                         <li><input type="password" name="password" placeholder="{% blocktrans %}Password{% endblocktrans %}"></li>
                         <li><input type="password" name="confirm_password" placeholder="{% blocktrans %}Confirm your password{% endblocktrans %}"></li>
