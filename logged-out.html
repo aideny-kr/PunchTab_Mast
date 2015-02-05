@@ -115,17 +115,17 @@
 
                 <form name="email-forgot" class="email-forgot">
                     <div class="clearfix logged-out-auth-title">
-                        <div class="float">
-                            <h2>{% blocktrans %}Forgot your password huh?{% endblocktrans %}</h2>
+                        <div class="forgot-password">
+                            <h2>{% blocktrans %}Forgot your password?{% endblocktrans %}</h2>
                         </div>
-                        <div class="float-right">
+                        <div class="back-login">
                             <a href="#" class="goto-email-login">{% blocktrans %}Back to login{% endblocktrans %}</a>
                         </div>
                     </div>
-                    <ul>
-                        <li>{% blocktrans %}Give us your email address and we'll reset your password?{% endblocktrans %}</li>
+                    <ul class="reset-password">
+                        <li>{% blocktrans %}Enter your email address and we'll reset your password.{% endblocktrans %}</li>
                         <li><input type="text" name="email" placeholder="{% blocktrans %}Enter your email address{% endblocktrans %}"></li>
-                        <li><button type="submit">{% blocktrans %}Reset your password{% endblocktrans %}</button></li>
+                        <li><button type="reset-password">{% blocktrans %}Reset your password{% endblocktrans %}</button></li>
                     </ul>
                 </form>
 
