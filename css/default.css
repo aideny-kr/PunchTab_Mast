@@ -1154,11 +1154,19 @@ button[type="facebook"] {
     top: -200px;
     right: -230px;
 }
-/*Repositioned 'Sign In'*/
+/*Changes to 'sign in' section*/
 div.signin {
     position: relative;
     top: 3px;
     right: -10px;
+}
+ul.signin {
+    position: relative;
+    top: 10px;
+}
+a.goto-email-forgot {
+    position: relative;
+    top: 10px;
 }
 /*Changes to 'change password' section*/
 .reset-password {
