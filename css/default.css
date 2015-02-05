@@ -1157,6 +1157,7 @@ button[type="facebook"] {
 /*Repositioned 'Sign Up'*/
 .signup {
     position: relative;
+    top: 3px;
     right: -10px;
 }
 /*Changes to 'change password' section*/
