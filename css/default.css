@@ -1241,3 +1241,7 @@ h2.logged-out-rewards {
 input.subscribe {
     width: 160px; height: 10px;
 }
+/*Changed text 'Beautiful' to Tisun color on logged-out page */
+span.beautiful {
+    color: #DF9F2D;
+}
