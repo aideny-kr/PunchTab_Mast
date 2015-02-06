@@ -1083,7 +1083,24 @@ button[type="signupemail"] {
   color: #FFF;
   width: 180px; height: 25px;
 }
-
+button[type="subscribe"] {
+  border-radius: 5px;
+  background: #DB9F2D;
+  margin: 5px;
+  box-shadow: 0 3px 0px rgba(182, 130, 31, .9);
+  color: #FFF;
+  width: 60px; height: 25px;
+  font-size: 14px; 
+}
+button.pt-connect {
+  border-radius: 5px;
+  background: #DB9F2D;
+  margin: 5px;
+  box-shadow: 0 3px 0px rgba(182, 130, 31, .9);
+  color: #FFF; 
+  position: relative;
+  top: 10px;
+}
 /* adding logo to background */
 
 #nav {
@@ -1219,4 +1236,8 @@ div.back-login {
 h2.logged-out-rewards {
     position: relative;
     left: 50px;
+}
+/*Changes to subscribe in 'Earn More!' page*/
+input.subscribe {
+    width: 160px; height: 10px;
 }
