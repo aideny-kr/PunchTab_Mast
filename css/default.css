@@ -1169,9 +1169,10 @@ a.goto-email-forgot {
     top: 10px;
 }
 /*Changes to 'change password' section*/
-.reset-password {
+ul.reset-password {
     position: relative;
-    top: -15px;
+    right: 50px;
+    top: -5px;
 }
 button[type=reset-password]{
   border-radius: 5px;
@@ -1182,10 +1183,20 @@ button[type=reset-password]{
   width: 200px; height: 30px;
   font-size: 16px; 
 }
-div.forgot-password {
+div.email-forgot {
     position: relative;
     top: 3px;
-    right: -1px;
+    right: 50px;
+}
+/*Changes to 'password success' section*/
+div.email-forgot-success {
+    position: relative;
+    top: 3px;
+    right: 60px;
+}
+ul.email-forgot-success {
+    position: relative;
+    right: 60px;
 }
 /*Changes to 'sign up' section*/
 ul.signup {

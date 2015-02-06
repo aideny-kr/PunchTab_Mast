@@ -115,7 +115,7 @@
 
                 <form name="email-forgot" class="email-forgot">
                     <div class="clearfix logged-out-auth-title">
-                        <div class="forgot-password">
+                        <div class="email-forgot">
                             <h2>{% blocktrans %}Forgot your password?{% endblocktrans %}</h2>
                         </div>
                         <div class="back-login">
@@ -131,16 +131,16 @@
 
                 <form name="email-forgot-success" class="email-forgot-success">
                    <div class="clearfix logged-out-auth-title">
-                        <div class="float">
-                            <h2>{% blocktrans %}Forgot your password huh?{% endblocktrans %}</h2>
+                        <div class="email-forgot-success">
+                            <h2>{% blocktrans %}We've reset your password{% endblocktrans %}</h2>
                         </div>
-                        <div class="float-right">
+                        <div class="back-login">
                             <a href="#" class="goto-email-login">{% blocktrans %}Back to login{% endblocktrans %}</a>
                         </div>
                     </div> 
-                    <ul>
-                        <li>{% blocktrans with email="<span class='email-forgot-email'></span>" %}Thanks. We've sent an email with temporary password to {{ email }}.{% endblocktrans %}</li>
-                        <li>{% blocktrans with here_link="<a href='#' class='goto-email-login'>here</a>" %}Click  to login using your temporary password.{% endblocktrans %}</li>
+                    <ul class="email-forgot-success">
+                        <li>{% blocktrans with email="<span class='email-forgot-email'></span>" %}Thanks! We've sent an email with temporary password to <b>{{ email }}.{% endblocktrans %}</b></li>
+                        <li>{% blocktrans with here_link="<a href='#' class='goto-email-login'>here</a>" %}Click to login using your temporary password.{% endblocktrans %}</li>
                     </ul>
                 </form>
 
