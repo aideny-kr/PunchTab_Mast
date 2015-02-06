@@ -1215,3 +1215,8 @@ div.back-login {
     right: -190px;
     top: -22px;
 }
+/*Repositioned 'Earn Stellar Rewards' section*/
+h2.logged-out-rewards {
+    position: relative;
+    left: 40px;
+}
