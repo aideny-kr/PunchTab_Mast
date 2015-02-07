@@ -1083,7 +1083,7 @@ button[type="signupemail"] {
   color: #FFF;
   width: 180px; height: 25px;
 }
-button[type="subscribe"] {
+button[type="earn-more"] {
   border-radius: 5px;
   background: #DB9F2D;
   margin: 5px;
@@ -1237,8 +1237,11 @@ h2.logged-out-rewards {
     position: relative;
     left: 50px;
 }
-/*Changes to subscribe in 'Earn More!' page*/
-input.subscribe {
+/*Changes to'Earn More!' page*/
+input.earn-more {
+    width: 160px; height: 10px;
+}
+select.earn-more{
     width: 160px; height: 10px;
 }
 /*Changed text 'Beautiful' to Tisun color on logged-out page */
